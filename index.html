@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>E.E. Cecília Meireles | Portal Institucional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* ====== ESTILO ORIGINAL MANTIDO ====== */
+:root{
+  --azul:#1e3a8a;
+  --azul2:#2563eb;
+  --cinza:#f1f5f9;
+  --texto:#0f172a;
+  --borda:#e5e7eb;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{background:var(--cinza);color:var(--texto);}
+.topo{background:#020617;color:#cbd5f5;text-align:center;padding:10px;font-size:.85rem;}
+header{background:#fff;border-bottom:1px solid var(--borda);position:sticky;top:0;z-index:1000;}
+.header-container{max-width:1500px;margin:auto;padding:22px;display:flex;justify-content:space-between;align-items:center;}
+.logo{font-size:1.7rem;font-weight:900;color:var(--azul);}
+.logo span{display:block;font-size:.95rem;color:#475569;font-weight:400;}
+nav a{margin-left:25px;cursor:pointer;text-decoration:none;color:#334155;font-weight:600;}
+nav a:hover{color:var(--azul2);}
+section{max-width:1500px;margin:auto;padding:100px 25px;display:none;}
+section.active{display:block;animation:fadeUp .6s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+.section-title{font-size:2.8rem;color:var(--azul);margin-bottom:50px;}
+.hero{background:linear-gradient(120deg,#1e3a8a,#2563eb);color:#fff;padding:110px 70px;border-radius:32px;}
+.hero-slide{display:none;}
+.hero-slide.active{display:block;}
+.hero h1{font-size:3.2rem;font-weight:900;}
+.hero p{margin-top:20px;font-size:1.2rem;max-width:1000px;}
+.panel{margin-top:90px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;}
+.card{background:#fff;padding:45px;border-radius:26px;box-shadow:0 12px 30px rgba(0,0,0,.08);}
+.card h3{color:var(--azul);}
+.counter{font-size:3rem;font-weight:900;color:var(--azul2);margin:15px 0;}
+.info-box{background:#fff;padding:70px;border-radius:34px;box-shadow:0 14px 40px rgba(0,0,0,.08);line-height:2;}
+.timeline{margin-top:70px;border-left:5px solid var(--azul2);padding-left:45px;}
+.time-item{margin-bottom:45px;position:relative;}
+.time-item::before{content:'';position:absolute;left:-60px;top:8px;width:16px;height:16px;background:var(--azul2);border-radius:50%;}
+.news-item{background:#fff;padding:55px;border-radius:28px;box-shadow:0 12px 32px rgba(0,0,0,.08);margin-bottom:35px;cursor:pointer;}
+.news-item h3{color:var(--azul);}
+.news-content{display:none;margin-top:25px;line-height:2;font-size:1.05rem;}
+.news-item.open .news-content{display:block;}
+.aluno{background:#fff;padding:110px;border-radius:36px;text-align:center;box-shadow:0 14px 40px rgba(0,0,0,.1);}
+footer{background:#020617;color:#94a3b8;text-align:center;padding:50px;margin-top:120px;}
+.popup{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;justify-content:center;align-items:center;z-index:3000;}
+.popup-content{background:#fff;padding:60px;border-radius:30px;max-width:600px;text-align:center;}
+.popup-content h2{color:var(--azul);}
+.popup-content p{margin-top:20px;line-height:1.9;}
+.popup-content button{margin-top:30px;padding:14px 40px;background:var(--azul2);border:none;color:#fff;border-radius:14px;cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="topo">Governo do Estado de São Paulo • Secretaria da Educação</div>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      E.E. Cecília Meireles
+      <span>Parisi – SP • Portal Institucional</span>
+    </div>
+    <nav>
+      <a onclick="show('inicio')">Início</a>
+      <a onclick="show('historia')">História</a>
+      <a onclick="show('aluno')">Área do Aluno</a>
+      <a onclick="show('noticias')">Notícias</a>
+    </nav>
+  </div>
+</header>
+
+<section id="inicio" class="active">
+  <div class="hero">
+    <div class="hero-slide active">
+      <h1>Escola Estadual Cecília Meireles</h1>
+      <p>Portal oficial de comunicação, transparência administrativa e informações pedagógicas.</p>
+    </div>
+    <div class="hero-slide">
+      <h1>Educação Pública com Compromisso</h1>
+      <p>Formação integral, cidadania e participação em olimpíadas nacionais.</p>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="card"><h3>👨‍🎓 Alunos</h3><div class="counter">197</div><p>Matriculados regularmente.</p></div>
+    <div class="card"><h3>📚 Projetos</h3><div class="counter">18</div><p>Projetos pedagógicos ativos.</p></div>
+    <div class="card"><h3>🏆 Olimpíadas</h3><div class="counter">2</div><p>OBMEP e ONHB.</p></div>
+    <div class="card"><h3>📢 Comunicados</h3><div class="counter">Atualizados</div><p>Publicações frequentes.</p></div>
+  </div>
+</section>
+
+<section id="historia">
+  <h2 class="section-title">🏫 História • Missão • Visão • Valores</h2>
+  <div class="info-box">
+    <p>
+      A Escola Estadual Cecília Meireles atende a comunidade local com foco na educação pública,
+      democrática e de qualidade, contribuindo para o desenvolvimento social e intelectual
+      dos estudantes.
+    </p>
+
+    <div class="timeline">
+      <div class="time-item"><h4>Fundação</h4><p>Criação da unidade escolar.</p></div>
+      <div class="time-item"><h4>Expansão</h4><p>Ampliação de turmas e projetos.</p></div>
+      <div class="time-item"><h4>Atualidade</h4><p>Participação em olimpíadas nacionais.</p></div>
+    </div>
+
+    <div class="panel" style="margin-top:80px">
+      <div class="card"><h3>📜 Missão</h3><p>Oferecer ensino público de qualidade.</p></div>
+      <div class="card"><h3>👁️ Visão</h3><p>Ser referência educacional.</p></div>
+      <div class="card"><h3>🤝 Valores</h3><p>Respeito, ética, inclusão e cidadania.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="aluno">
+  <div class="aluno">
+    <h2>🎓 Área do Aluno</h2>
+    <p><strong>Página disponível em breve</strong></p>
+    <p>Aguarde as mudanças do professor.</p>
+  </div>
+</section>
+
+<section id="noticias">
+  <h2 class="section-title">📰 Notícias e Comunicados Oficiais</h2>
+
+  <div class="news-item" onclick="toggle(this)">
+    <h3>📢 Comunicado Geral à Comunidade Escolar</h3>
+    <div class="news-content">
+      <p>
+        A Direção da Escola Estadual Cecília Meireles informa que todos os comunicados
+        oficiais serão publicados exclusivamente neste portal, garantindo transparência
+        e acesso à informação.
+      </p>
+    </div>
+  </div>
+
+  <div class="news-item" onclick="toggle(this)">
+    <h3>📐 OBMEP 2026 – Orientações Oficiais</h3>
+    <div class="news-content">
+      <p>
+        A OBMEP visa estimular o estudo da matemática e identificar talentos.
+        Os alunos participantes devem acompanhar o cronograma oficial divulgado
+        pela coordenação escolar.
+      </p>
+    </div>
+  </div>
+
+  <div class="news-item" onclick="toggle(this)">
+    <h3>📜 ONHB – Etapas e Organização</h3>
+    <div class="news-content">
+      <p>
+        A Olimpíada Nacional em História do Brasil promove o conhecimento histórico,
+        trabalho em equipe e análise crítica.
+      </p>
+    </div>
+  </div>
+
+  <div class="news-item" onclick="toggle(this)">
+    <h3>📅 Calendário Escolar</h3>
+    <div class="news-content">
+      <p>
+        O calendário escolar segue as diretrizes da Secretaria da Educação,
+        com datas de avaliações, recessos e eventos pedagógicos.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+© 2026 • Escola Estadual Cecília Meireles • Secretaria da Educação
+</footer>
+
+<div class="popup" id="obmep">
+  <div class="popup-content">
+    <h2>📌 Aviso Importante – OBMEP</h2>
+    <p>
+      Alunos inscritos devem acompanhar o cronograma oficial.
+      Informações adicionais serão divulgadas pela coordenação.
+    </p>
+    <button onclick="closePop('obmep')">Fechar</button>
+  </div>
+</div>
+
+<div class="popup" id="onhb">
+  <div class="popup-content">
+    <h2>📌 Aviso Importante – ONHB</h2>
+    <p>
+      A ONHB encontra-se em andamento.
+      Atenção aos prazos e orientações pedagógicas.
+    </p>
+    <button onclick="closePop('onhb')">Fechar</button>
+  </div>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function toggle(el){el.classList.toggle('open');}
+let slide=0;
+setInterval(()=>{
+  let slides=document.querySelectorAll('.hero-slide');
+  slides.forEach(s=>s.classList.remove('active'));
+  slide=(slide+1)%slides.length;
+  slides[slide].classList.add('active');
+},4500);
+window.onload=()=>{
+  setTimeout(()=>obmep.style.display='flex',1500);
+  setTimeout(()=>onhb.style.display='flex',4500);
+}
+function closePop(id){document.getElementById(id).style.display='none';}
+</script>
+
+</body>
+</html>
